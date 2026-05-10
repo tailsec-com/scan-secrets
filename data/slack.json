@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "id": "slack",
+  "name": "Slack",
+  "description": "Slack API tokens and webhook URLs",
+  "keywords": ["slack", "xoxb", "xoxp", "xoxa", "xoxr", "slack_webhook"],
+  "patterns": [
+    {
+      "type": "bot_token",
+      "description": "Slack Bot User OAuth Token",
+      "regex": "\\b(xoxb-[A-Za-z0-9-]{10,48})\\b",
+      "entropy": 4.0,
+      "verify": {
+        "type": "http",
+        "endpoint": "https://slack.com/api/auth.test"
+      }
+    },
+    {
+      "type": "user_token",
+      "description": "Slack User Token",
+      "regex": "\\b(xoxp-[A-Za-z0-9-]{10,48})\\b",
+      "entropy": 4.0
+    },
+    {
+      "type": "app_token",
+      "description": "Slack App-Level Token",
+      "regex": "\\b(xoxa-[A-Za-z0-9-]{10,48})\\b",
+      "entropy": 4.0
+    },
+    {
+      "type": "refresh_token",
+      "description": "Slack Refresh Token",
+      "regex": "\\b(xoxr-[A-Za-z0-9-]{10,48})\\b",
+      "entropy": 4.0
+    },
+    {
+      "type": "webhook_url",
+      "description": "Slack Incoming Webhook URL",
+      "regex": "https://hooks\\.slack\\.com/services/T[a-zA-Z0-9_]+/B[a-zA-Z0-9_]+/[a-zA-Z0-9_]+",
+      "entropy": 3.5
+    }
+  ],
+  "documentation": "https://api.slack.com/authentication"
+}

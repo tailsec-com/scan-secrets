@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "id": "azure",
+  "name": "Microsoft Azure",
+  "description": "Azure subscription keys, service principals, and OAuth tokens",
+  "keywords": ["azure", "microsoft", "spn", "client_secret", "azure_subscription"],
+  "patterns": [
+    {
+      "type": "subscription_key",
+      "description": "Azure Subscription Key",
+      "regex": "\\b([0-9a-f]{32})\\b",
+      "entropy": 3.5,
+      "verify": {
+        "type": "http",
+        "endpoint": "https://management.azure.com/subscriptions"
+      }
+    },
+    {
+      "type": "client_secret",
+      "description": "Azure Service Principal Client Secret",
+      "regex": "\\b([a-zA-Z0-9._~-]{40,200})\\b",
+      "entropy": 4.5
+    },
+    {
+      "type": "access_token",
+      "description": "Azure OAuth Access Token",
+      "regex": "\\b(eyJ0eXAiOiJKV1QiLCJhbGciOiJSMjCPIffp)\\.[A-Za-z0-9_-]+\\.[A-Za-z0-9_-]+\\b",
+      "entropy": 4.5
+    },
+    {
+      "type": "app_password",
+      "description": "Azure AD App Password",
+      "regex": "\\b(~?[a-zA-Z0-9]{8,24})\\b",
+      "entropy": 4.0
+    }
+  ],
+  "documentation": "https://docs.microsoft.com/en-us/azure/active-directory/develop/authentication-vs-authorization"
+}

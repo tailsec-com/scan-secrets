@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "id": "gcp",
+  "name": "Google Cloud Platform",
+  "description": "Google Cloud service account keys and API credentials",
+  "keywords": ["gcp", "google", "google_cloud", "service_account", "ya29"],
+  "patterns": [
+    {
+      "type": "service_account_key",
+      "description": "GCP Service Account JSON Key",
+      "regex": "\"type\":\\s*\"service_account\"",
+      "entropy": 3.0
+    },
+    {
+      "type": "access_token",
+      "description": "GCP OAuth Access Token",
+      "regex": "\\b(ya29\\.[A-Za-z0-9_-]{60,200})\\b",
+      "entropy": 4.5
+    },
+    {
+      "type": "api_key",
+      "description": "GCP API Key",
+      "regex": "\\b(AIza[0-9A-Za-z_-]{35})\\b",
+      "entropy": 3.0,
+      "verify": {
+        "type": "http",
+        "endpoint": "https://www.googleapis.com/discovery/v1/apis"
+      }
+    }
+  ],
+  "documentation": "https://cloud.google.com/docs/authentication"
+}

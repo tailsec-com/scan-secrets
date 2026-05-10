@@ -1,0 +1,45 @@
+{
+  "id": "stripe",
+  "name": "Stripe",
+  "patterns": [
+    {
+      "type": "Stripe Access Token",
+      "regex": "sk_live_[0-9a-zA-Z]{24,}",
+      "entropy": 4.5,
+      "verify": {
+        "type": "http",
+        "method": "GET",
+        "url": "https://api.stripe.com/v1/balance",
+        "authType": "bearer",
+        "redactAuth": true
+      },
+      "rotatonUrl": "https://dashboard.stripe.com/settings/keys"
+    },
+    {
+      "type": "Stripe Publishable Key",
+      "regex": "pk_live_[0-9a-zA-Z]{24,}",
+      "entropy": 4.0
+    },
+    {
+      "type": "Stripe Restricted Key",
+      "regex": "rk_live_[0-9a-zA-Z]{24,}",
+      "entropy": 4.5,
+      "verify": {
+        "type": "http",
+        "method": "GET",
+        "url": "https://api.stripe.com/v1/balance",
+        "authType": "bearer",
+        "redactAuth": true
+      }
+    },
+    {
+      "type": "Stripe Webhook Signature",
+      "regex": "whsec_[0-9a-fA-F]{64}",
+      "entropy": 5.0
+    }
+  ],
+  "examples": [
+    "sk_live_51H7tZfJ8k4eGqm6rKVKzP9bYv2tW5xQ8rT3uW6pL0kJ7nM4qR2sD9fG1hY0m",
+    "whsec_a1b2c3d4e5f6g7h8i9j0k1l2m3n4o5p6q7r8s9t0u1v2w3x4y5z6a7b8c9d0e1f2"
+  ]
+}

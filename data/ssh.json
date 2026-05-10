@@ -1,0 +1,19 @@
+{
+  "id": "ssh",
+  "name": "SSH",
+  "patterns": [
+    {
+      "type": "SSH Private Key",
+      "regex": "-----BEGIN (RSA |DSA |EC |OPENSSH |PGP )?PRIVATE KEY-----",
+      "entropy": 5.5,
+      "verify": {
+        "type": "ssh_key_parse",
+        "redactAuth": true
+      },
+      "rotatonUrl": "https://docs.github.com/en/authentication/connecting-to-github-with-ssh"
+    }
+  ],
+  "examples": [
+    "-----BEGIN RSA PRIVATE KEY-----\nMIIEpAIBAAKCAQEA..."
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "id": "aws",
+  "name": "AWS",
+  "description": "Amazon Web Services access keys and credentials",
+  "keywords": ["aws", "amazon", "access_key", "secret_key", "AKIA", "ASIA"],
+  "patterns": [
+    {
+      "type": "access_key",
+      "description": "AWS Access Key ID (AKIA)",
+      "regex": "\\b(AKIA[A-Z0-9]{16})\\b",
+      "entropy": 3.0,
+      "verify": {
+        "type": "aws-sts",
+        "description": "Verifies via AWS STS GetCallerIdentity"
+      }
+    },
+    {
+      "type": "temp_key",
+      "description": "AWS Temporary Session Key (ASIA)",
+      "regex": "\\b(ASIA[A-Z0-9]{16})\\b",
+      "entropy": 3.0,
+      "verify": {
+        "type": "aws-sts",
+        "description": "Verifies via AWS STS GetCallerIdentity"
+      }
+    },
+    {
+      "type": "role_session",
+      "description": "AWS Role Session Token",
+      "regex": "\\b(ASIA[A-Z0-9]{20})\\b",
+      "entropy": 4.0
+    }
+  ],
+  "resource_types": {
+    "ABIA": "AWS STS service bearer token",
+    "ACCA": "Context-specific credential",
+    "AGPA": "User group",
+    "AIDA": "IAM user",
+    "AIPA": "Amazon EC2 instance profile",
+    "AKIA": "Access key",
+    "ANPA": "Managed policy",
+    "ANVA": "Version in a managed policy",
+    "APKA": "Public key",
+    "AROA": "Role",
+    "ASCA": "Certificate",
+    "ASIA": "Temporary (STS) access key IDs"
+  },
+  "documentation": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html"
+}

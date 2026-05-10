@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "id": "github",
+  "name": "GitHub",
+  "description": "GitHub personal access tokens and OAuth tokens",
+  "keywords": ["github", "ghp_", "gho_", "ghu_", "ghs_", "ghr_"],
+  "patterns": [
+    {
+      "type": "personal_access_token",
+      "description": "GitHub Personal Access Token (classic)",
+      "regex": "\\b(ghp_[A-Za-z0-9]{36})\\b",
+      "entropy": 4.0,
+      "verify": {
+        "type": "http",
+        "endpoint": "https://api.github.com/user"
+      }
+    },
+    {
+      "type": "oauth_token",
+      "description": "GitHub OAuth Access Token",
+      "regex": "\\b(gho_[A-Za-z0-9]{36})\\b",
+      "entropy": 4.0,
+      "verify": {
+        "type": "http",
+        "endpoint": "https://api.github.com/user"
+      }
+    },
+    {
+      "type": "user_to_server",
+      "description": "GitHub User-to-Server OAuth Token",
+      "regex": "\\b(ghu_[A-Za-z0-9]{36})\\b",
+      "entropy": 4.0
+    },
+    {
+      "type": "server_to_server",
+      "description": "GitHub Server-to-Server OAuth Token",
+      "regex": "\\b(ghs_[A-Za-z0-9]{36})\\b",
+      "entropy": 4.0
+    },
+    {
+      "type": "refresh_token",
+      "description": "GitHub Refresh Token",
+      "regex": "\\b(ghr_[A-Za-z0-9]{36})\\b",
+      "entropy": 4.0
+    }
+  ],
+  "documentation": "https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/about-authenticationentication#ghes"
+}

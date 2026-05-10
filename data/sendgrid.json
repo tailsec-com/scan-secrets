@@ -1,0 +1,22 @@
+{
+  "id": "sendgrid",
+  "name": "SendGrid",
+  "patterns": [
+    {
+      "type": "SendGrid API Key",
+      "regex": "SG\\.[a-zA-Z0-9_-]{22}\\.[a-zA-Z0-9_-]{43}",
+      "entropy": 5.0,
+      "verify": {
+        "type": "http",
+        "method": "GET",
+        "url": "https://api.sendgrid.com/v3/templates",
+        "authType": "bearer",
+        "redactAuth": true
+      },
+      "rotatonUrl": "https://app.sendgrid.com/settings/api_keys"
+    }
+  ],
+  "examples": [
+    "SG.xK8vLiV1mN2oP3qR4sT5uV6wX7yZ8aB9cD0eF1gH2iJ3kL4mN5oP6qR7sT8u"
+  ]
+}
