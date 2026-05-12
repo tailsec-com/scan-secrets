@@ -7,10 +7,14 @@
   "bin": {
     "tailsec-scan-secrets": "./dist/cli.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tailsec-com/scan-secrets"
+  },
   "scripts": {
     "build": "tsc --noEmit",
     "prepublish": "tsc",
-    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
+    "test": "node --experimental-vm-modules --max-old-space-size=4096 node_modules/jest/bin/jest.js",
     "sync-patterns": "node scripts/sync-patterns.ts"
   },
   "dependencies": {
