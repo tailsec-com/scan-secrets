@@ -1,6 +1,10 @@
-import { detectJWT } from '../src/detectors/jwt.js';
+import { detectJWT, clearPatternsCache } from '../src/detectors/jwt.js';
 
 describe('JWT Detector', () => {
+  afterEach(() => {
+    clearPatternsCache();
+    jest.resetModules();
+  });
   test('detects JWT token', async () => {
     const content = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c';
     const results = await detectJWT(content, {});

@@ -18,9 +18,20 @@ interface JWTData {
   patterns: JWTPattern[];
 }
 
+let patternsCache: JWTData | null = null;
+
 function loadPatterns(): JWTData {
+  if (patternsCache !== null) {
+    return patternsCache;
+  }
   const data = readFileSync(join(process.cwd(), 'data', 'jwt.json'), 'utf-8');
-  return JSON.parse(data);
+  const parsed = JSON.parse(data) as JWTData;
+  patternsCache = parsed;
+  return parsed;
+}
+
+export function clearPatternsCache(): void {
+  patternsCache = null;
 }
 
 function decodeJWT(token: string): { header: any; payload: any; signature: string } | null {
