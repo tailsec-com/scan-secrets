@@ -14,7 +14,7 @@
   "scripts": {
     "build": "tsc --noEmit",
     "prepublish": "tsc",
-    "test": "node --experimental-vm-modules --max-old-space-size=6144 node_modules/jest/bin/jest.js --forceExit --runInBand",
+    "test": "NODE_OPTIONS='--max-old-space-size=8192' node --experimental-vm-modules node_modules/jest/bin/jest.js --forceExit --runInBand",
     "sync-patterns": "node scripts/sync-patterns.ts"
   },
   "dependencies": {
