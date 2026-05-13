@@ -1,0 +1,40 @@
+name: Rule Request
+description: Request a new detection rule
+labels: ["enhancement", "rule-request"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Rule Request
+
+        Want to add a new security check? Fill out below.
+
+        **Important**: For rule requests, explain the security impact and provide references (CVE, CWE, etc.)
+  - type: input
+    id: scanner
+    attributes:
+      label: Target Scanner
+      description: Which scanner should this rule be added to?
+      placeholder: "scan-k8s, scan-terraform, etc."
+    validations:
+      required: true
+  - type: textarea
+    id: rule_description
+    attributes:
+      label: Rule Description
+      description: What should this rule detect?
+    validations:
+      required: true
+  - type: textarea
+    id: security_impact
+    attributes:
+      label: Security Impact
+      description: Why is this a security issue?
+    validations:
+      required: true
+  - type: input
+    id: references
+    attributes:
+      label: References
+      description: CVE IDs, CWE, blog posts, etc.
+      placeholder: "CVE-2024-XXXX, CWE-79"

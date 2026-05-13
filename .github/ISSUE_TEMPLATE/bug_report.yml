@@ -1,0 +1,54 @@
+name: Bug Report
+description: File a bug report
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Bug Report
+
+        Thanks for reporting a bug! Please fill out the form below.
+
+        **Scanner**: Which scanner has the issue?
+        **File type**: What kind of file were you scanning?
+  - type: dropdown
+    id: scanner
+    attributes:
+      label: Scanner
+      options:
+        - scan-k8s
+        - scan-terraform
+        - scan-docker
+        - scan-secrets
+        - scan-deps
+        - scan-license
+        - scan-cfn
+        - scan-sast
+        - scan-container
+        - scan-code
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: What's the bug?
+      placeholder: Describe the bug clearly
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Reproduction
+      description: Steps to reproduce
+      placeholder: |
+        1. Run '...'
+        2. See error...
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Scanner Version
+      placeholder: "0.1.0"

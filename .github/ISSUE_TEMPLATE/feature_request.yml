@@ -1,0 +1,26 @@
+name: Feature Request
+description: Suggest a new feature
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Feature Request
+
+        Want a new scanner or rule? Tell us!
+  - type: dropdown
+    id: type
+    attributes:
+      label: Type
+      options:
+        - New scanner
+        - New detection rule
+        - CLI improvement
+        - Documentation
+        - Other
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+    validations:
+      required: true

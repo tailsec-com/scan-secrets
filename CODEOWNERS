@@ -1,0 +1,14 @@
+# Default owners for everything
+*       @tailsec/maintainers
+
+# Scanner-specific owners
+scan-k8s/        @tailsec/k8s-team
+scan-terraform/  @tailsec/terraform-team
+scan-docker/     @tailsec/container-team
+scan-secrets/    @tailsec/secrets-team
+scan-deps/       @tailsec/deps-team
+scan-license/    @tailsec/license-team
+scan-cfn/        @tailsec/aws-team
+scan-sast/       @tailsec/sast-team
+scan-container/  @tailsec/container-team
+scan-code/       @tailsec/maintainers
