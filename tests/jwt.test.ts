@@ -1,3 +1,8 @@
+/**
+ * @license MIT
+ * Copyright (c) 2024 Tailsec
+ */
+
 import { detectJWT, clearPatternsCache } from '../src/detectors/jwt.js';
 
 describe('JWT Detector', () => {

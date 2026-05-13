@@ -1,3 +1,8 @@
+/**
+ * @license MIT
+ * Copyright (c) 2024 Tailsec
+ */
+
 import { PatternRule, ScanResult } from '../types.js';
 import { shannonEntropy, cleanString } from './entropy.js';
 

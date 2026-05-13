@@ -1,3 +1,8 @@
+/**
+ * @license MIT
+ * Copyright (c) 2024 Tailsec
+ */
+
 import axios from 'axios';
 import { ScanResult } from '../types.js';
 import { shannonEntropy } from '../lib/entropy.js';

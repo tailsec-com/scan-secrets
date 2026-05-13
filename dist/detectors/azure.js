@@ -1,3 +1,8 @@
+/**
+ * @license MIT
+ * Copyright (c) 2024 Tailsec
+ */
+
 import axios from 'axios';
 import { shannonEntropy } from '../lib/entropy.js';
 const AZURE_SUB_KEY_PATTERN = /\b([0-9a-f]{32})\b/g;

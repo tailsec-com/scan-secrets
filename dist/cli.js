@@ -1,3 +1,8 @@
+/**
+ * @license MIT
+ * Copyright (c) 2024 Tailsec
+ */
+
 #!/usr/bin/env node
 import { Command } from 'commander';
 import { scanDirectory, formatResults } from './scanner.js';

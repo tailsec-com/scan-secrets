@@ -1,3 +1,8 @@
+/**
+ * @license MIT
+ * Copyright (c) 2024 Tailsec
+ */
+
 export default {
   preset: 'ts-jest/presets/default-esm',
   testEnvironment: 'node',

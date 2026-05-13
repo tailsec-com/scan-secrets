@@ -1,3 +1,8 @@
+/**
+ * @license MIT
+ * Copyright (c) 2024 Tailsec
+ */
+
 import { readFileSync, statSync } from 'fs';
 import { relative } from 'path';
 import { glob } from 'glob';

@@ -1,3 +1,8 @@
+/**
+ * @license MIT
+ * Copyright (c) 2024 Tailsec
+ */
+
 export interface VerifyResult {
     verified: boolean;
     extraData?: Record<string, string>;

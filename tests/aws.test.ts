@@ -1,3 +1,8 @@
+/**
+ * @license MIT
+ * Copyright (c) 2024 Tailsec
+ */
+
 import { detectAWS } from '../src/detectors/aws.js';
 
 describe('AWS Detector', () => {

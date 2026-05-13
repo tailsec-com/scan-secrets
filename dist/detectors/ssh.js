@@ -1,3 +1,8 @@
+/**
+ * @license MIT
+ * Copyright (c) 2024 Tailsec
+ */
+
 import { readFileSync } from 'fs';
 import { join } from 'path';
 function loadPatterns() {

@@ -1,3 +1,8 @@
+/**
+ * @license MIT
+ * Copyright (c) 2024 Tailsec
+ */
+
 export function shannonEntropy(str: string): number {
   if (str.length === 0) return 0;
 

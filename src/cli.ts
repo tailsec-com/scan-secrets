@@ -1,3 +1,8 @@
+/**
+ * @license MIT
+ * Copyright (c) 2024 Tailsec
+ */
+
 #!/usr/bin/env node
 
 import { Command } from 'commander';
@@ -19,6 +24,7 @@ program
   .option('-v, --verify', 'Verify found secrets via API calls', false)
   .option('-f, --format <format>', 'Output format (text|json|sarif)', 'text')
   .option('-o, --output <file>', 'Write output to file')
+  .option('--severity <level>', 'Filter results by severity (critical|high|medium|low)')
   .option('--git', 'Also scan git history for removed secrets', false)
   .option('--max-commits <n>', 'Maximum number of commits to scan in git history', '1000')
   .action(async (path, options) => {

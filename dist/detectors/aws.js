@@ -1,3 +1,8 @@
+/**
+ * @license MIT
+ * Copyright (c) 2024 Tailsec
+ */
+
 import { shannonEntropy } from '../lib/entropy.js';
 import { verifyAWS } from '../lib/verifier.js';
 const AWS_ID_PATTERN = /\b((?:AKIA|ABIA|ACCA|AIPA|ANPA|AROA|ASCA)[A-Z0-9]{16})\b/g;

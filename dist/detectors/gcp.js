@@ -1,3 +1,8 @@
+/**
+ * @license MIT
+ * Copyright (c) 2024 Tailsec
+ */
+
 import axios from 'axios';
 import { shannonEntropy } from '../lib/entropy.js';
 const GCP_API_KEY_PATTERN = /\b(AIza[0-9A-Za-z_-]{35})\b/g;

@@ -1,3 +1,8 @@
+/**
+ * @license MIT
+ * Copyright (c) 2024 Tailsec
+ */
+
 import { detectGitHub } from '../src/detectors/github.js';
 
 describe('GitHub Detector', () => {

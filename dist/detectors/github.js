@@ -1,3 +1,8 @@
+/**
+ * @license MIT
+ * Copyright (c) 2024 Tailsec
+ */
+
 import { shannonEntropy } from '../lib/entropy.js';
 const GITHUB_PATTERNS = {
     classic: /\b(ghp_[A-Za-z0-9]{36})\b/g,

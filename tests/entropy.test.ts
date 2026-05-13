@@ -1,3 +1,8 @@
+/**
+ * @license MIT
+ * Copyright (c) 2024 Tailsec
+ */
+
 import { shannonEntropy } from '../src/lib/entropy.js';
 
 describe('Shannon Entropy', () => {

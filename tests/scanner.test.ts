@@ -1,3 +1,8 @@
+/**
+ * @license MIT
+ * Copyright (c) 2024 Tailsec
+ */
+
 import { scanDirectory, formatResults } from '../src/scanner.js';
 import { writeFileSync, mkdirSync, rmSync, readdirSync } from 'fs';
 import { join } from 'path';

@@ -1,3 +1,8 @@
+/**
+ * @license MIT
+ * Copyright (c) 2024 Tailsec
+ */
+
 import { execSync } from 'child_process';
 import { pipeline } from 'stream/promises';
 import { createWriteStream, existsSync, mkdirSync, readFileSync, rmSync } from 'fs';

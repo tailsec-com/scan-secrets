@@ -1,3 +1,8 @@
+/**
+ * @license MIT
+ * Copyright (c) 2024 Tailsec
+ */
+
 import axios from 'axios';
 export async function verifyAWS(accessKeyId, secretKey) {
     try {

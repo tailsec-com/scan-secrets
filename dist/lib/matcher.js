@@ -1,3 +1,8 @@
+/**
+ * @license MIT
+ * Copyright (c) 2024 Tailsec
+ */
+
 import { shannonEntropy, cleanString } from './entropy.js';
 export class PatternMatcher {
     rules;

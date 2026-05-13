@@ -1,3 +1,8 @@
+/**
+ * @license MIT
+ * Copyright (c) 2024 Tailsec
+ */
+
 import { execSync } from 'child_process';
 import { detectAWS } from './aws.js';
 import { detectGitHub } from './github.js';
